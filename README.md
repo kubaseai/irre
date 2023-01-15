@@ -7,7 +7,7 @@ What devops did wrong?
 1. There is orphaned settings from development stage enabling HTTP Basic Auth using devops:devops credentials.
 2. BatchId HTTP header is used to override batch identifier which maps 1:1 to folder to store uploaded files, but batchId is not verified so attack using "./../../../" to overwrite OS files is possible.
 3. Deserializer is complex and doesn't follow single responsibility pattern. It's a multi-purpose tool which shouldn't be linked to REST API. As a result uploaded Java bytecode implementing Runnable can executed. It's a design mistake.
-4. Service Bean contains static object and therefore is very easy target for modification for a malware code without direct access to Java object representing the service.
+4. Service Bean contains static object and therefore is very easy target for modification for a malware code without direct access to Java object representing the service. In this example service doing money transfers is attacked - money is transferred to the bank account set by malware (IBAN modified in queued transactions stored in memory).
 
 ![Alt text](howto-01.png?raw=true "Howto 01")
 
