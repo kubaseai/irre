@@ -10,6 +10,8 @@ What did devops do wrong?
 4. Deserializer is complex and doesn't follow single responsibility pattern. It's a multi-purpose tool which shouldn't be linked to REST API. As a result uploaded Java bytecode implementing Runnable can executed. It's a design mistake. See: https://cwe.mitre.org/data/definitions/502.html, https://cwe.mitre.org/data/definitions/94.html, 
 5. Service Bean contains static object and therefore is very easy target for modification for a malware code without direct access to Java object representing the service. In this example service doing money transfers is attacked - money is transferred to the bank account set by malware (IBAN modified in queued transactions stored in memory).
 
+![Alt text](howto-00.png?raw=true "Howto 00")
+
 ![Alt text](howto-01.png?raw=true "Howto 01")
 
 ![Alt text](howto-02.png?raw=true "Howto 02")
